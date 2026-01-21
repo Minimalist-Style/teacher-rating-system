@@ -1,0 +1,129 @@
+.leaderboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.leaderboard-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: white;
+}
+
+.leaderboard-header h1 {
+  font-size: 3rem;
+  margin: 0;
+  background: linear-gradient(to right, #ffffff, #a5b4fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 10px rgba(165, 180, 252, 0.3));
+}
+
+.leaderboard-header p {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  margin-top: 0.5rem;
+}
+
+.podium {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  height: 400px; /* Ensure space for podium height */
+}
+
+.podium-spot {
+  flex: 1;
+  max-width: 300px;
+  transition: transform 0.3s ease;
+}
+
+.podium-spot:hover {
+  transform: translateY(-10px);
+}
+
+/* Specific podium heights/order */
+.spot-1 {
+  order: 2;
+  transform: scale(1.1);
+  z-index: 2;
+}
+.spot-2 {
+  order: 1;
+}
+.spot-3 {
+  order: 3;
+}
+
+.list-view {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.add-award-btn {
+  margin-top: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(5px);
+}
+
+.add-award-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+  .podium {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+  
+  .spot-1 { order: 1; transform: none; }
+  .spot-2 { order: 2; }
+  .spot-3 { order: 3; }
+  
+  .leaderboard-header h1 {
+    font-size: 2rem;
+  }
+}
+
+.dev-trigger {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: rgba(4, 9, 39, 0.45);
+  backdrop-filter: blur(5px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.3);
+  font-family: monospace;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  z-index: 100;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dev-trigger:hover {
+  background: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+  transform: rotate(180deg);
+  border-color: #60a5fa;
+}
